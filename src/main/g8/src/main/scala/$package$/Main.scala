@@ -50,7 +50,7 @@ object Main extends App {
       .map {
         case (_, index) =>
           if (index % 10000 == 0) println("processed: " + index)
-          PersonCreated(randomId, s"foo-\\$index", index, None, index)
+          PersonCreated(randomId, s"foo-\$index", index, None, index)
       }
       .map(value => ("PersonCreatedAvro", value.id, value))
       .via(recordFlow)
