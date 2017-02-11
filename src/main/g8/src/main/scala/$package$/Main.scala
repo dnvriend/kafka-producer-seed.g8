@@ -23,7 +23,6 @@ object Main extends App {
   implicit val mat: Materializer = ActorMaterializer()
   val producerSettings: ProducerSettings[String, GenericRecord] =
     ProducerSettings[String, GenericRecord](system, None, None)
-      .withBootstrapServers("localhost:9092")
 
   def recordFlow[Value](implicit recordFormat: RecordFormat[Value]): Flow[(Topic, Key, Value), ProducerRecord[Key, GenericRecord], NotUsed] =
     Flow[(Topic, Key, Value)].map {
