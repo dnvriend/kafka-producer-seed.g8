@@ -6,6 +6,8 @@ version := "1.0.0"
 
 scalaVersion := "2.11.8"
 
+resolvers += "Confluent Maven Repo" at "http://packages.confluent.io/maven/"
+
 // kafka
 libraryDependencies += "io.confluent" % "kafka-avro-serializer" % "3.1.2"
 libraryDependencies += "com.sksamuel.avro4s" %% "avro4s-core" % "1.6.4"
